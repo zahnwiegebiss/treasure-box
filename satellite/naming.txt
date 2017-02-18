@@ -1,0 +1,16 @@
+#################################################################
+#
+#	Naming examples for products, repos, etc.
+#
+#################################################################
+
+#####  eg: EPEL
+Product:
+  Extra Packages for Enterprise Linux
+Name and Label for Repo:
+  Extra_Packages_for_Enterprise_Linux_7_x86_64
+URL:
+  https://dl.fedoraproject.org/pub/epel/7/x86_64
+  https://dl.fedoraproject.org/pub/epel/6/x86_64
+Keys:
+  https://dl.fedoraproject.org/pub/epel/
