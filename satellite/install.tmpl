@@ -1,13 +1,19 @@
 foreman-installer --scenario katello \
 --verbose \
---certs-server-cert /root/certs/katello.crt \
---certs-server-cert-req /root/certs/katello.csr \
---certs-server-key /root/certs/katello.key \
---certs-server-ca-cert /etc/ipa/ca.crt \
 --foreman-initial-organization "derZAHN" \
 --foreman-initial-location "Hamburg" \
 --foreman-admin-username admin \
 --foreman-admin-password redhat
+
+
+# foreman-installer --scenario katello \
+# --verbose \
+# --certs-server-cert "/root/certs/katello.crt" \
+# --certs-server-cert-req "/root/certs/katello.csr" \
+# --certs-server-key "/root/certs/katello.key" \
+# --certs-server-ca-cert "/etc/ipa/ca.crt" \
+# --certs-update-server \
+# --certs-update-server-ca
 
 
 foreman-installer --scenario katello \
