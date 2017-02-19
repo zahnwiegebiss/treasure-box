@@ -1,0 +1,48 @@
+foreman-installer --scenario katello \
+--verbose \
+--foreman-initial-organization "derZAHN" \
+--foreman-initial-location "Hamburg" \
+--foreman-admin-username admin \
+--foreman-admin-password redhat
+
+
+foreman-installer --scenario katello \
+--verbose \
+--enable-foreman-plugin-remote-execution \
+--enable-foreman-proxy-plugin-remote-execution-ssh \
+--enable-foreman-plugin-bootdisk \
+--enable-foreman-plugin-discovery \
+--foreman-websockets-encrypt=false \
+--foreman-proxy-tftp=true \
+--foreman-proxy-bmc=true \
+--foreman-proxy-puppetrun=true \
+--foreman-proxy-plugin-remote-execution-ssh-enabled=true \
+--foreman-proxy-plugin-remote-execution-ssh-generate-keys=false \
+--foreman-plugin-discovery-install-images=true
+
+
+# foreman-installer --scenario katello \
+# --verbose \
+# --foreman-proxy-dhcp=true \
+# --foreman-proxy-dhcp-gateway="192.168.x.x" \
+# --foreman-proxy-dhcp-range="192.168.x.x 192.168.x.x" \
+# --foreman-proxy-dhcp-nameservers="192.168.x.x,192.168.x.x" \
+# --foreman-proxy-dhcp-option-domain="example.com"
+
+
+foreman-installer --scenario katello \
+--verbose \
+--foreman-proxy-dns=true \
+--foreman-proxy-dns-provider=nsupdate_gss \
+--foreman-proxy-dns-reverse="2.168.192.in-addr.arpa" \
+--foreman-proxy-dns-server=192.168.2.60 \
+--foreman-proxy-dns-zone=tusz.lan \
+--foreman-proxy-dns-tsig-principal="foremanproxy/forseti.tusz.lan@TUSZ.LAN" \
+--foreman-proxy-dns-tsig-keytab="/etc/foreman-proxy/dns.keytab"
+
+
+foreman-installer --scenario katello \
+--verbose \
+--foreman-proxy-realm=true \
+--foreman-proxy-realm-keytab="/etc/foreman-proxy/freeipa.keytab" \
+--foreman-proxy-realm-principal="realm-proxy@TUSZ.LAN"
