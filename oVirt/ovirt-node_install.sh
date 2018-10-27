@@ -9,11 +9,11 @@ systemctl reload postfix
 ipa-client-install --mkhomedir
 
 ### Install packages
-yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-vim /etc/yum.repos.d/epel.repo # disable epel
+yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+vi /etc/yum.repos.d/epel.repo # disable epel
 
-yum install cockpit-ovirt-dashboard.noarch cockpit-machines-ovirt bash-completion mlocate deltarpm vim-minimal strace sg3_utils
-yum install --enablerepo epel vim-enhanced bash-completion iotop iftop ncdu htop bash-completion-extras.noarch 
+yum install -y cockpit-ovirt-dashboard.noarch cockpit-machines-ovirt bash-completion mlocate deltarpm vim-minimal strace sg3_utils
+yum install -y --enablerepo epel vim-enhanced bash-completion iotop iftop ncdu htop
 
 ### Update system
 yum clean all; rm -rf /var/cache/yum/*; yum update
