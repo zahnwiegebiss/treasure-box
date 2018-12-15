@@ -1,0 +1,1 @@
+ipa-server-install --ds-password='PASSWORT' --admin-password='PASSWORT' --domain=tusz.lan --realm=TUSZ.LAN --hostname=lvsipa301.tusz.lan --setup-dns --mkhomedir --ca-subject='CN=IPA CA,O=derZAHN,E=alex@derzahn.org,OU=IT,L=Hamburg,ST=Hamburg,C=DE' --reverse-zone='2.168.192.in-addr.arpa.' --forwarder=192.168.2.1 --no-dnssec-validation 
